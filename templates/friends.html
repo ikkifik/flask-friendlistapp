@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1> {{ title }} </h1>
+        <br>
+
+        <form action="/friends" method="POST">
+            <input type="text" name="name" class="form">
+            <input type="submit" value="Add Name" class="btn btn-primary">
+        </form>
+        <br><br>
+
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for friend in friends %}
+                <tr>
+                    <th scope="row">{{friend.id}}</th>
+                    <td> <a href="/update/{{ friend.id }}">{{ friend.name }}</a></td>
+                    <td>
+                        <a href="/delete/{{ friend.id }}" class="btn btn-outline-danger btn-sm" onclick="confirm('Are Your Sure?')">Delete</a>
+                    </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+            
+
+    </div>
+
+{% endblock %}

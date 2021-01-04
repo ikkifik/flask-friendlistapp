@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Homepage{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>hello World!</h1>
+
+        <img src="{{ url_for('static', filename='images/kanna_wp.jpg') }}" alt="kanna hashimoto image" width="600">
+
+    </div>
+
+{% endblock %}

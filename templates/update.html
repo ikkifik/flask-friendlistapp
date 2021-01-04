@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1> {{ title }} </h1>
+        <br>
+
+        <form action="/update/{{ friend_to_update.id }}" method="POST">
+            <input type="text" name="name" class="form" value="{{ friend_to_update.name }}">
+            <input type="submit" value="Update Name" class="btn btn-primary">
+        </form>
+        <br><br>
+    </div>
+
+{% endblock %}

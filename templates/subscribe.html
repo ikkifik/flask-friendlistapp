@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    <div class="container">
+
+      {% if error_statement %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{ error_statement }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {% endif %}
+
+        <h1>Subscribe to get my newsletter!</h1>
+        <br><br>
+
+        <form action="/form" method="POST">
+            <div class="form-group">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="first_name" placeholder="First Name" value="{{ first_name }}">
+            </div>
+            
+            <div class="form-group">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_name" placeholder="Last Name" value="{{ last_name }}">
+            </div>
+
+            <div class="form-group">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Email Address" value="{{ email }}">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+
+    </div>
+
+{% endblock %}
